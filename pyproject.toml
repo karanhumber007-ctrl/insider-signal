@@ -1,17 +1,53 @@
 [build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.backends.legacy:build"
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "insider-signal"
 version = "0.1.0"
-description = "Multi-source insider trading intelligence"
-requires-python = ">=3.9"
-dependencies = [
-    "requests>=2.28",
-    "click>=8.0",
-    "rich>=13.0",
+description = "Multi-source insider trading intelligence CLI for retail investors"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [
+    { name = "karanhumber007-ctrl" }
 ]
+keywords = [
+    "insider trading",
+    "stock market",
+    "congress trades",
+    "STOCK Act",
+    "SEC Form 4",
+    "financial intelligence",
+    "retail investing",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "responses>=0.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/karanhumber007-ctrl/insider-signal"
+Repository = "https://github.com/karanhumber007-ctrl/insider-signal"
+"Bug Tracker" = "https://github.com/karanhumber007-ctrl/insider-signal/issues"
 
 [project.scripts]
 insider-signal = "insider_signal.cli:main"
