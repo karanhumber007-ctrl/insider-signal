@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "insider-signal"
+version = "0.1.0"
+description = "Multi-source insider trading intelligence"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.28",
+    "click>=8.0",
+    "rich>=13.0",
+]
+
+[project.scripts]
+insider-signal = "insider_signal.cli:main"
