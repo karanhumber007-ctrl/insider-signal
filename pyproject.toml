@@ -51,3 +51,17 @@ Repository = "https://github.com/karanhumber007-ctrl/insider-signal"
 
 [project.scripts]
 insider-signal = "insider_signal.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["insider_signal*"]
+
+[tool.flake8]
+max-line-length = 100
+ignore = ["E241", "E221", "E127", "E131", "F401", "F541", "W503"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
